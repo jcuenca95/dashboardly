@@ -1,6 +1,36 @@
-// Import stylesheets
-import './style.css';
+import { ExternalWidget } from './external.widget';
+import { Dashboardly } from './public/dashboardly.class';
 
-// Write TypeScript code!
-const appDiv: HTMLElement = document.getElementById('app');
-appDiv.innerHTML = `<h1>TypeScript Starter</h1>`;
+const manager = new Dashboardly({
+  widgets: [
+    {
+      name: 'list',
+      class: ExternalWidget,
+    },
+  ],
+});
+
+manager.createDashboard(
+  'app',
+  [
+    {
+      type: 'list',
+    },
+    {
+      type: 'jorge',
+    },
+    {
+      type: 'jorge',
+    },
+    {
+      type: 'jorge',
+    },
+    {
+      type: 'jorge',
+    },
+    {
+      type: 'jorge',
+    },
+  ],
+  'flex'
+);
